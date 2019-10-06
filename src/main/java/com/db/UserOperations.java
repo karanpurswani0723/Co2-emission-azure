@@ -12,8 +12,8 @@ public class CreateUser {
         User user = new User();
         user.setAccountNumber("123");
         user.setBalance("12345");
-        user.setCreditAmount("100");
-        user.setDebitAmount("50");
+        //user.setCreditAmount("100");
+        //user.setDebitAmount("50");
         user.setTransactionId(Math.random());
         user.setUserName("karan");
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
