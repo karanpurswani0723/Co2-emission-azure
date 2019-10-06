@@ -1,13 +1,11 @@
 package com.db;
 
-import java.util.Date;
-
 public class User {
 
     private String userName;
-    private String balance;
-    private String creditAmount;
-    private String debitAmount;
+    private double balance;
+    private double creditDebitAmount;
+    private String transactionType;
     private double transactionId;
     private String accountNumber;
     private String date;
@@ -22,29 +20,14 @@ public class User {
         this.userName = userName;
     }
 
-    public String getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(String balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
-    public String getCreditAmount() {
-        return creditAmount;
-    }
-
-    public void setCreditAmount(String creditAmount) {
-        this.creditAmount = creditAmount;
-    }
-
-    public String getDebitAmount() {
-        return debitAmount;
-    }
-
-    public void setDebitAmount(String debitAmount) {
-        this.debitAmount = debitAmount;
-    }
 
     public double getTransactionId() {
         return transactionId;
@@ -68,5 +51,21 @@ public class User {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public double getCreditDebitAmount() {
+        return creditDebitAmount;
+    }
+
+    public void setCreditDebitAmount(double creditDebitAmount) {
+        this.creditDebitAmount = creditDebitAmount;
+    }
+
+    public String getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
     }
 }
