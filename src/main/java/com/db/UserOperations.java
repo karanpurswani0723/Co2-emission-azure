@@ -8,12 +8,12 @@ import java.util.Date;
 
 public class UserOperations {
 
-    public User createUser() {
+    public User createUser(String accountNumber,String userName) {
         User user = new User();
-        user.setAccountNumber("123");
+        user.setAccountNumber(accountNumber);
         user.setBalance(Double.valueOf("0"));
         user.setTransactionId(Math.random());
-        user.setUserName("karan");
+        user.setUserName(userName);
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
         user.setDate(formatter.format(date));
@@ -26,7 +26,8 @@ public class UserOperations {
 
         BasicDBObjectBuilder docBuilder = BasicDBObjectBuilder.start();
         //this is the primary key--transactionid
-        docBuilder.append("_id",String.valueOf(user.getTransactionId()).substring(2));
+        docBuilder.append("transactionId",String.valueOf(user.getTransactionId()).substring(2));
+        //docBuilder.append("_id",String.valueOf(user.getTransactionId()).substring(2));
         docBuilder.append("accountNumber",user.getAccountNumber());
         docBuilder.append("balance",user.getBalance());
         docBuilder.append("creditDebitAmount",user.getCreditDebitAmount());
