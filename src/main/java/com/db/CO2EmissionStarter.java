@@ -60,6 +60,13 @@ public class CO2EmissionStarter {
 
             User updatedUser=userOperations.updateUser(latestdbObject, creditDebitAmount);
             DBObject dbObject = userOperations.createDBObject(updatedUser);
+
+            //validation for balance check
+            if (Double.valueOf(dbObject.get("balance").toString()) < 0){
+                System.out.println("not enough balance for transaction..declined transaction");
+                return;
+            }
+            
             databaseOperations.writeToDatabase(collection, dbObject);
 
         }
